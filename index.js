@@ -25,5 +25,9 @@ io.on('connection', socket => {
   });
 });
 
+app.get('/healthz', (req, res) => {
+  res.status(200).send('OK');
+});
+
 const PORT = process.env.PORT || 3000;
 server.listen(PORT, () => console.log(`Server listening on port ${PORT}`)); 
